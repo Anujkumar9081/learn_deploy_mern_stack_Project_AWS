@@ -1,0 +1,24 @@
+name: Test EC2 Runner
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test-runner:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Show project files
+        run: |
+          echo "Runner is working!"
+          pwd
+          ls -la
+          echo "Backend:"
+          ls -la backend
+          echo "Frontend:"
+          ls -la frontend
